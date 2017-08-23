@@ -30,7 +30,7 @@ function onWindowLoad() {
 function hoverAction() {
 	document.getElementById('tagName').innerHTML = this.getAttribute('data-tag');
 	document.getElementById('nodeId').innerHTML = this.getAttribute('data-id');
-	document.getElementById('classNames').innerHTML = this.getAttribute('data-classes');
+	document.getElementById('classes').innerHTML = this.getAttribute('data-classes');
 	document.getElementById('childrenCount').innerHTML = this.getAttribute('data-childcount');
 }
 
@@ -43,18 +43,8 @@ function buildTree(root) {
 
 	function _buildNode(node) {
 		var nodeString = '<li>';
-		var classText = ''; // Placeholder for the classes
-		if(node.classes.length === 1){ // node.classes is an array
-			classText = node.classes[0];
-		}else{
-			// Elements with no class tag will end up as ""
-			//classText += '[';
-			for(var j = 0; j < node.classes.length; i++){
-				classText += node.classes[j] + ' ';
-			}
-			//classText += ']';
-		}
-		nodeString += '<a class="node" data-tag="' + node.tag + '" data-childcount=' + node.children.length + ' data-id="' + node.id + '" data-classes="' + classText + '" >' + node.tag + '</a>';
+		var classes = Object.values(node.classes);
+		nodeString += '<a class="node" data-tag="' + node.tag + '" data-childcount=' + node.children.length + ' data-id="' + node.id + '" data-classes="' + classes + '" >' + node.tag + '</a>';
 		// Add the children as a sublist if any.
 		if (node.children.length > 0) {
 			nodeString += '<ul>';
