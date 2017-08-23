@@ -8,7 +8,7 @@ function scanPage() {
 
 	function _scanElement(domElement) {
 		var id = domElement.id;
-		var classes = domElement.classList;
+		var classes = domElement.className.split(/\s+/);
 		var tagName = domElement.tagName;
 		var children = domElement.children;
 		var scannedChildren = [];
@@ -20,6 +20,6 @@ function scanPage() {
 			id: id,
 			classes: classes,
 			children: scannedChildren
-		}
+		};
 	}
 }
