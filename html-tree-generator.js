@@ -20,6 +20,6 @@ function scanPage() {
 			id: id,
 			classes: classes,
 			children: scannedChildren
-		}
+		};
 	}
 }
