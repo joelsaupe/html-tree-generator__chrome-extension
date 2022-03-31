@@ -1,2 +1,4 @@
-# html-tree-generator__chrome-extension
-Chrome Extension that represents any webpage's html as a tree.
+# HTML Tree Visualizer (Chrome Extension)
+This repo was forked from [html-tree-generator__chrome-extension](https://github.com/joelsaupe/html-tree-generator__chrome-extension)
+
+The goal of this project is to expand upon the work started by [@joelsaupe](https://github.com/joelsaupe)
